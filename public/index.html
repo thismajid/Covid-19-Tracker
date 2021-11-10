@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Covid-19 Statistics</title>
+  </head>
+  <body class="bg-gray-100">
+    <div class="lg:flex mb-4 m-10 rounded">
+      <div
+        class="
+          w-full
+          lg:w-1/6
+          rounded
+          overflow-hidden
+          shadow-lg
+          mx-auto
+          relative
+          flex flex-col
+          md:h-full
+          bg-white
+        "
+      >
+        <div class="px-6 py-4 h-64">
+          <div class="text-xl">Infected</div>
+          <p class="text-5xl font-bold mb-3" id="infectedNumber"></p>
+          <p class="text-gray-600 date"></p>
+          <p class="text-gray-700 text-xl mt-2">
+            Number of active cases of COVID-19.
+          </p>
+        </div>
+        <button
+          class="
+            w-full
+            bg-purple-500
+            py-2
+            px-4
+            rounded
+            inline-flex
+            items-center
+          "
+        ></button>
+      </div>
+
+      <div
+        class="
+          w-full
+          lg:w-1/6
+          rounded
+          overflow-hidden
+          shadow-lg
+          mx-auto
+          relative
+          flex flex-col
+          md:h-full
+          bg-white
+        "
+      >
+        <div class="px-6 py-4 h-64">
+          <div class="text-xl">Deaths</div>
+          <p class="text-5xl font-bold mb-3" id="deathsNumber"></p>
+          <p class="text-gray-600 date"></p>
+          <p class="text-gray-700 text-xl mt-2">
+            Number of active cases of COVID-19.
+          </p>
+        </div>
+        <button
+          class="w-full bg-red-500 py-2 px-4 rounded inline-flex items-center"
+        ></button>
+      </div>
+    </div>
+
+    <div class="col-span-6 sm:col-span-3 w-full lg:w-1/4 mx-auto mt-20">
+      <label for="country" class="block text-sm font-medium text-gray-700"
+        >Select a country from dropdown ...</label
+      >
+      <select
+        id="country"
+        name="country"
+        autocomplete="country-name"
+        class="
+          mt-1
+          block
+          w-full
+          py-2
+          px-3
+          border border-gray-300
+          bg-white
+          rounded-md
+          shadow-sm
+          focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
+          sm:text-sm
+        "
+        onChange="myNewFunction(this);"
+      >
+        <option>Global</option>
+      </select>
+    </div>
+
+    <div class="mx-auto my-10" id="chart" style="width: 75%"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="javascripts/main.js"></script>
+  </body>
+</html>
